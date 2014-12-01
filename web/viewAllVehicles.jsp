@@ -29,15 +29,15 @@ ArrayList one=(ArrayList)all.get(i);
     </div></th>
   </tr>
   <tr>
-    <td colspan="2"><strong>Number : </strong>&nbsp;<%=(String)one.get(2)%></td>
+    <td colspan="2"><strong>Model : </strong>&nbsp;<%=(String)one.get(2)%></td>
     <td width="21%" rowspan="6"><img src="<%=(String)one.get(8)%>" width="220" height="120" /></td>
   </tr>
   <tr>
-    <td colspan="2"><strong>Make</strong> : <%=(String)one.get(3)%></td>
+    <td colspan="2"><strong>Brand</strong> : <%=(String)one.get(3)%></td>
   </tr>
   <tr>
-    <td><strong>Fuel Type:</strong> <%=(String)one.get(4)%></td>
-    <td><strong>Cost : </strong><%=one.get(7)%>&nbsp;$.</td>
+    <td><strong>Type:</strong> <%=(String)one.get(4)%></td>
+    <td><strong>Price : </strong><%=one.get(7)%>&nbsp;$.</td>
   </tr>
   <tr>
     <td colspan="2"><strong>Vehicle Type: </strong><%=one.get(9)%></td>
@@ -52,7 +52,7 @@ ArrayList one=(ArrayList)all.get(i);
   </tr>
   <tr>
     <td>
-    <div align="center"><a href="do?MOD=MTN&ACT=editVehicle&vId=<%=(String)one.get(0)%>">Edit Vehicle</a> </div></td>
+    <div align="center"><a href="do?MOD=MTN&ACT=editVehicle&vId=<%=(String)one.get(0)%>">Order Vehicle</a> </div></td>
     <td>&nbsp;&nbsp;&nbsp;<a href="javascript:deleteVehicle(<%=(String)one.get(0)%>)">Delete Vehicle</a></td>
     <td>&nbsp;</td>
   </tr>

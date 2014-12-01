@@ -1,6 +1,6 @@
 <table width="100%" border="0" cellspacing="0" cellpadding="4">
   <tr>
-    <td width="200" rowspan="3" bgcolor="#999999"><a href="#"><img src="images/car.jpg" name="Logo" width="160" height="120" border="0" style="background-color: #CCCC99" /></a></td>
+    <td width="200" rowspan="3" bgcolor="#999999"><a href="do?MOD=BOK&ACT=Home"><img src="images/car.jpg" name="Logo" width="160" height="120" border="0" style="background-color: #CCCC99" /></a></td>
     <td width="100%" height="61" bgcolor="#EED9A8" style="padding-left:20px;font-size:24px; color:#D22929"><b>Vehicle Showroomm</b><br />   </td>
   </tr>
   <tr>

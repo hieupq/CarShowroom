@@ -77,7 +77,7 @@ else {
 </table></div>
 <p>&nbsp;</p>
 <div class="white">
-<p align="center">Copyright 2002 - 2009 - <b>Vehicle-Management.com</b> - All Rights Reserved <br>
+<p align="center">- All Rights Reserved <br>
   <br>
   <strong>Home</strong><strong> | </strong><strong>Profile</strong><strong> | </strong><strong>Site                     Map</strong><strong> | </strong><strong>Services</strong><strong> | </strong><strong>Terms                     &amp; Conditions</strong><strong> | </strong><strong>Disclaimer</strong><strong> | </strong><strong>Partners</strong><strong> | </strong><strong>Contact                     us</strong></p>
  

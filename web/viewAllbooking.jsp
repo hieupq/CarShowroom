@@ -42,11 +42,13 @@ ArrayList one=(ArrayList)all.get(i);
     <td> <div align="center"><%=(String)one.get(1)%></div></td>
     <td><div align="center"><%=(String)one.get(3)%></div></td>
     <td><div align="center"><%=(String)one.get(4)%></div></td>
-    <td><div align="center"><select name="action" >
-	<option value="Pending">Pending</option>
-	<option value="Approved">Approved</option>
-	<option value="Rejected">Canceled</option>
-	</select></div></td>
+    <td><div align="center">
+            <select name="action" >
+                <option value="Pending"><%=(String)one.get(7)%></option>
+                <option value="Pending">Pending</option>
+                <option value="Approved">Approved</option>
+                <option value="Rejected">Canceled</option>
+            </select></div></td>
 	<td><div align="center"><input type="submit" value=" Go " /></div></td>
   </tr>
 </form>
