@@ -39,6 +39,7 @@ function MM_validateForm() { //v4.0
 }
 //-->
 </script>
+<script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
 
 <div class="header">Vehicle Edit </div>
 <h3>Following are the Vehicle Details.You can Edit the Details </h3>
@@ -78,18 +79,45 @@ function MM_validateForm() { //v4.0
       <td colspan="2"></td>
     </tr>
     </tr>
-        <tr>
+    <tr>
       <td>Customer: <label>
         <select name="uname" id="uname">
-		<%
-		for(int j=0;j<us;j++){
-                ArrayList u=(ArrayList)usr.get(j);
-		%>
-		<option value="<%=(String)u.get(0)%>"><%=(String)u.get(1)%></option>
-		<% } %>
+            <option data-add=""  data-mobile="" data-email="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</option>
+    		<%
+      		for(int j=0;j<us;j++){
+                      ArrayList u=(ArrayList)usr.get(j);
+      		%>
+      		<option value="<%=(String)u.get(0)%>" data-add="<%=(String)u.get(3)%>" data-mobile="<%=(String)u.get(6)%>" data-email="<%=(String)u.get(7)%>"><%=(String)u.get(1)%></option>
+      		<% } 
+        %>
         </select>
-      </label></td>
+      </label>
+    </td>
     </tr>
+
+    <!-- View Details -->
+    <script>
+      $('#uname').change(function() {
+        var name = $('#uname option:selected').text();
+        var add = $('#uname option:selected').attr('data-add');
+        var mobile = $('#uname option:selected').attr('data-mobile');
+        var email = $('#uname option:selected').attr('data-email');
+
+        var output = '<p><strong>Name: </strong>' + name + '</p>';
+        output += '<p><strong>Address: </strong>' + add + '</p>';
+        output += '<p><strong>Mobile: </strong>' + mobile + '</p>';
+        output += '<p><strong>Email: </strong>' + email + '</p>';
+
+
+        $('#user-details').html(output);
+      });
+    </script>
+    <tr id="user-details">
+      <td>
+        
+      </td>
+    </tr>
+
     <tr>
       <td colspan="3"><label>
           <input name="NoOfDays" type="hidden" value="4" id="NoOfDays" size="5" />
@@ -130,3 +158,8 @@ function MM_validateForm() { //v4.0
 <br/>
 <% } %>
 <br/>
+<script>
+     $(document).ready(function() {
+         $('#uname').select2();
+     });
+</script>

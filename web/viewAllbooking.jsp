@@ -21,15 +21,24 @@ function bookAction(act){
 </script>
 <div class="header">View All Order's Request</div>
 <br/>
-<table width="95%" align="center"  style="border:#D22929 solid 2px;padding:10px;" border="0">
-  <tr>
+<table width="95%" align="center"  style="border:#D22929 solid 2px;padding:10px;" border="0" id="data">
+  <thead>
     <th bgcolor="#D22929" scope="col"><span class="style10">Vehicle Name </span></th>
     <th bgcolor="#D22929" scope="col"><span class="style10">Customer</span></th>
     <th bgcolor="#D22929" scope="col"><span class="style10">Dealer </span></th>
     <th bgcolor="#D22929" scope="col"><span class="style10">Date</span></th>
     <th bgcolor="#D22929" scope="col"><span class="style10">Status</span></th>
     <th bgcolor="#D22929" scope="col"><span class="style10">Action</span></th>
-  </tr>
+  </thead>
+  <tfoot>
+    <th bgcolor="#D22929" scope="col"><span class="style10">Vehicle Name </span></th>
+    <th bgcolor="#D22929" scope="col"><span class="style10">Customer</span></th>
+    <th bgcolor="#D22929" scope="col"><span class="style10">Dealer </span></th>
+    <th bgcolor="#D22929" scope="col"><span class="style10">Date</span></th>
+    <th bgcolor="#D22929" scope="col"><span class="style10">Status</span></th>
+    <th bgcolor="#D22929" scope="col"><span class="style10">Action</span></th>
+  </tfoot>
+  <tbody>
   <%
 for(int i=0;i<size;i++){
 ArrayList one=(ArrayList)all.get(i);
@@ -53,4 +62,10 @@ ArrayList one=(ArrayList)all.get(i);
   </tr>
 </form>
   <% } %>
+</tbody>
 </table>
+<script>
+     $(document).ready(function() {
+         $('#data').DataTable();
+     });
+</script>

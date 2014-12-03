@@ -13,7 +13,7 @@ function deleteVehicle(id){
 }
 </script>
 <div class="header">View All Vehicle Details </div><br/>
-<h3>View all the Vehicle Details.<br/>If you want to add more Vehilce then <a href="do?MOD=MTN&ACT=VclAdd">Click Here.</a></h3><br/>
+<h3>View all the Vehicle Details.<br/><a href="do?MOD=MTN&ACT=VclAdd">ADD NEW VEHICLE</a></h3><br/>
 
 <%
 int count =0;
