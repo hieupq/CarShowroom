@@ -36,6 +36,7 @@ count=count+1;
 ArrayList one=(ArrayList)all.get(i);
 %>
 
+
 <table width="90%" align="center" style="border:#D22929 solid 2px;padding:5px;" border="0" >
   <tr>
     <th colspan="3" scope="col"><div class="header"> 

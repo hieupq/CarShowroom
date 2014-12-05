@@ -157,6 +157,7 @@ public class VehicleCommon {
 				ArrayList one = new ArrayList();
 				one.add(rs.getInt(1));
 				one.add(rs.getString(2));
+                                one.add(rs.getString(3));
 				one.add(rs.getString(6));
 				one.add(rs.getString(8));
 				one.add(rs.getString(9));
@@ -408,6 +409,63 @@ public class VehicleCommon {
                                 one.add(rs.getString(8));
                                 one.add(rs.getString(9));
                                 one.add(rs.getString(10));                                
+				all.add(one);
+			}
+			DBConnect.closeConn(c);    
+		}
+		catch (Exception ex) {
+			System.out.println (ex);
+		}
+		return all;
+	}
+        public static ArrayList viewAllAccount() {
+		ArrayList all=new ArrayList();
+		Connection c=null;
+		try {
+			//String sql="SELECT * FROM bookings WHERE status = 'Pending'";//
+                        String sql="SELECT * FROM admin_user";//
+			c = DBConnect.prepareConn();
+    		Statement st=c.createStatement();
+			ResultSet rs =st.executeQuery(sql);
+			while(rs.next()) {
+				ArrayList one = new ArrayList();
+                                one.add(rs.getString(1));
+				one.add(rs.getString(2));
+				one.add(rs.getString(3));
+				one.add(rs.getString(4));
+				all.add(one);
+			}
+			DBConnect.closeConn(c);    
+		}
+		catch (Exception ex) {
+			System.out.println (ex);
+		}
+		return all;
+	}//viewAllAccount
+        public static ArrayList viewAllBookingByDealer(String name, int i) {
+		ArrayList all=new ArrayList();
+		Connection c=null;
+		try {
+			//String sql="SELECT * FROM bookings WHERE status = 'Pending'";//
+                    
+                    String by ="d_name";
+                    if (i==0) {by = "d_name";}
+                    if (i==1) {by = "u_name";}
+                        String sql="SELECT * FROM bookings where "+ by + " = '" + name +"'";//
+                        
+			c = DBConnect.prepareConn();
+                    Statement st=c.createStatement();
+			ResultSet rs =st.executeQuery(sql);
+			while(rs.next()) {
+				ArrayList one = new ArrayList();
+				one.add(rs.getInt(1)+"");
+                                one.add(rs.getString(3));
+				one.add(rs.getString(4));
+				one.add(rs.getString(5));
+				one.add(rs.getString(6));
+				one.add(rs.getString(7));
+				one.add(rs.getString(9));
+				one.add(rs.getString(11));
 				all.add(one);
 			}
 			DBConnect.closeConn(c);    

@@ -8,11 +8,10 @@
 <link rel="STYLESHEET" type="text/css" href="include/calendar.css">
 <link rel="STYLESHEET" type="text/css" href="include/select2.css">
 <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.4/css/jquery.dataTables.css">
-
-<script language="JavaScript" type="text/javascript" src="include/simplecalendar.js"></script>
 <script type="text/javascript" language="javascript" src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-<script type="text/javascript" language="javascript" src="//cdn.datatables.net/1.10.4/js/jquery.dataTables.min.js"></script>
+<script type="text/javascript" language="javascript" src="//cdn.datatables.net/1.10.4/js/jquery.dataTables.js"></script>
 <script language="JavaScript" type="text/javascript" src="js/select2.min.js"></script>
+<script language="JavaScript" type="text/javascript" src="include/simplecalendar.js"></script>
 
 <style type="text/css">
 <!--

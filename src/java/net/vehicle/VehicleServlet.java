@@ -48,6 +48,14 @@ public class VehicleServlet extends HttpServlet {
 				session.setAttribute("content_page","viewAllDrivers.jsp");
 				res.sendRedirect("template.jsp");
 			}
+                        else if(act.equals("ViewCus")){
+				session.setAttribute("content_page","viewAllCustomers.jsp");
+				res.sendRedirect("template.jsp");
+			}
+                        else if(act.equals("ViewAcc")){
+				session.setAttribute("content_page","viewAllAccountls.jsp");
+				res.sendRedirect("template.jsp");
+			}
 			else if(act.equals("FuelAdd")){
 				session.setAttribute("content_page","addFuel.jsp");
 				res.sendRedirect("template.jsp");
@@ -111,6 +119,24 @@ public class VehicleServlet extends HttpServlet {
 				int vId = Integer.parseInt(req.getParameter("vId"));
 				session.setAttribute("vid",vId+"");
 				session.setAttribute("content_page","editVehicle.jsp");
+				res.sendRedirect("template.jsp");
+			}
+                        else if(act.equals("viewOrder")){
+				int oId = Integer.parseInt(req.getParameter("oId"));
+				session.setAttribute("oid",oId+"");
+				session.setAttribute("content_page","viewOrder.jsp");
+				res.sendRedirect("template.jsp");
+			}
+                        else if(act.equals("viewOrderBy")){				
+                                String name = req.getParameter("name");
+				session.setAttribute("name",name+"");
+				session.setAttribute("content_page","viewOrderByDealer.jsp");
+				res.sendRedirect("template.jsp");
+			}
+                        else if(act.equals("viewOrderCus")){				
+                                String name = req.getParameter("name");
+				session.setAttribute("name",name+"");
+				session.setAttribute("content_page","viewOrderByCus.jsp");
 				res.sendRedirect("template.jsp");
 			}
 			else if(act.equals("ViewBook")){
@@ -300,6 +326,10 @@ public class VehicleServlet extends HttpServlet {
 				session.setAttribute("content_page","Register.jsp");
 				res.sendRedirect("index.jsp");
 			}
+                        else if(act.equals("RegCus")){ // 
+				session.setAttribute("content_page","regCus.jsp");
+				res.sendRedirect("template.jsp");
+			}
 			else if(act.equals("bokUser")){ //
 				session.setAttribute("content_page","bokUser.jsp");
 				res.sendRedirect("index.jsp");
@@ -307,23 +337,43 @@ public class VehicleServlet extends HttpServlet {
 			else if(act.equals("Login")){ // 
 				session.setAttribute("content_page","uLogin.jsp");
 				res.sendRedirect("index.jsp");
+			}                                                
+                        else if(act.equals("search")){
+				session.setAttribute("content_page","search.jsp");
+				res.sendRedirect("index.jsp");
 			}else if(act.equals("doBok")){ //
-				int uid = Integer.parseInt((String)session.getAttribute("u_id"));
-				String uname = (String)session.getAttribute("u_name");
-				String vname = req.getParameter("v_name");				
+				//int uid = Integer.parseInt((String)session.getAttribute("u_id"));
+                                //int uid = Integer.parseInt(req.getParameter("u_name"));
+                            int uid = 3;
+				//String uname = (String)session.getAttribute("u_name");
+                                //String uname = req.getParameter("name");
+                                String uname = "";
+                                switch(uid){
+                                    case 1:
+                                        uname = "Jane Nguyen";
+                                        break;
+                                        case 2:
+                                        uname = "Peter James";
+                                        break;
+                                            case 3:
+                                        uname = "Tran Anh";
+                                        break;
+                                }
+				String vname = req.getParameter("v_name");
+                                String dname = req.getParameter("d_name");
 //				String sdate = req.getParameter("sdate");
 //				String edate = req.getParameter("edate");
 //				int NoOfDays = Integer.parseInt(req.getParameter("NoOfDays"));
-//				String KiloMeters = req.getParameter("KiloMeters");
+				String KiloMeters = req.getParameter("KiloMeters");
 //				int NoOfSeats = Integer.parseInt(req.getParameter("NoOfSeats"));
-                                String sdate = ("2014-11-27");
-				String edate = ("2014-11-27");
+                                String sdate = ("2014-12-04");
+				String edate = ("2014-12-04");
 				int NoOfDays = 1;
-				String KiloMeters = "10";
+				//String KiloMeters = "10";
 				int NoOfSeats = 4;
 				String status = "Pending";
 				String sql = "INSERT INTO bookings (uid, u_name, v_name, d_name, sdate, edate, nod, km, no_of_seats, status, b_date) "+
-					" VALUES ("+uid+",'"+uname+"','"+vname+"','','"+sdate+"','"+edate+"',"+NoOfDays+",'"+KiloMeters+"',"+NoOfSeats+",'Pending',NOW())";
+					" VALUES ("+uid+",'"+uname+"','"+vname+"','"+dname+"','"+sdate+"','"+edate+"',"+NoOfDays+",'"+KiloMeters+"',"+NoOfSeats+",'Pending',NOW())";
 			//	System.out.println (sql);
 				int update = DBConnect.updateQuery(sql);
 				if(update ==1){
@@ -372,7 +422,7 @@ public class VehicleServlet extends HttpServlet {
 				}else {
 					session.setAttribute("content_page","regFail.jsp");
 				}
-				res.sendRedirect("index.jsp");
+				res.sendRedirect("template.jsp");
 			}else if(act.equals("doLog")){
 				String Username = req.getParameter("Username");
 				String Password = req.getParameter("Password");
@@ -390,7 +440,7 @@ public class VehicleServlet extends HttpServlet {
 					res.sendRedirect("index.jsp");
 				}else {
 					session.setAttribute("content_page","logFail.jsp");
-					res.sendRedirect("index.jsp");
+					res.sendRedirect("templa.jsp");
 				}
 				c.close();	    
 				}

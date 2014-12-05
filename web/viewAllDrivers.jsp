@@ -42,13 +42,9 @@ ArrayList one=(ArrayList)all.get(i);
 %>
 <tr style="height:30px; padding:4px;">
     <td><div align="center"><%=(String)one.get(1)%></div></td>
-<!--    <td><div align="center"><%=(String)one.get(2)%></div></td>-->
-    <td><div align="center"><%=(String)one.get(3)%></div></td>
-<!--    <td><div align="center"><%=(String)one.get(4)%>&nbsp;</div></td>
-    <td><div align="center"><%=(String)one.get(5)%>&nbsp;</div></td>
-    <td><div align="center"><%=one.get(6)%>Years.</div></td>-->
+    <td><div align="center"><%=(String)one.get(4)%></div></td>
 <!--    <td><div align="center"><a href="javascript:deleteDriver(<%= one.get(0) %>)">Remove</a></div></td>-->
-    <td><div align="center"><a href="">View Record</a></div></td>
+    <td><div align="center"><a href="do?MOD=MTN&ACT=viewOrderBy&name=<%=(String)one.get(1)%>">View Record</a></div></td>
 </tr>
 <% } %>
 </tbody>

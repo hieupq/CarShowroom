@@ -67,10 +67,14 @@ function MM_validateForm() { //v4.0
       <td colspan="2"><strong>Vehicle Type: </strong><%=one.get(9)%></td>
     
     <tr>
+        <tr>
+      <td colspan="2"><strong>Dealer: </strong><%=one.get(12)%></td>
+    
+    <tr>
       <td colspan="2"><hr width="400px"  align="left" style="border:#990000 solid 2px;"/></td>
     </tr>
     <tr>
-      <td colspan="2"><div align="center"><a href="#"><strong>Edit Vehicle  Details</strong> </a></div></td>
+      <td colspan="2"><div align="center"><a href="#"><strong>Vehicle  Details</strong> </a></div></td>
     </tr>
     <tr>
       <td colspan="2"><input type="hidden" name="v_name" value="<%=(String)one.get(1)%>" /></td>
@@ -87,7 +91,7 @@ function MM_validateForm() { //v4.0
       		for(int j=0;j<us;j++){
                       ArrayList u=(ArrayList)usr.get(j);
       		%>
-      		<option value="<%=(String)u.get(0)%>" data-add="<%=(String)u.get(3)%>" data-mobile="<%=(String)u.get(6)%>" data-email="<%=(String)u.get(7)%>"><%=(String)u.get(1)%></option>
+      		<option value="<%=(String)u.get(0)%>" data-name="<%=(String)u.get(1)%>" data-add="<%=(String)u.get(3)%>" data-mobile="<%=(String)u.get(6)%>" data-email="<%=(String)u.get(7)%>"><%=(String)u.get(1)%>/<%=(String)u.get(6)%></option>
       		<% } 
         %>
         </select>
@@ -98,7 +102,7 @@ function MM_validateForm() { //v4.0
     <!-- View Details -->
     <script>
       $('#uname').change(function() {
-        var name = $('#uname option:selected').text();
+        var name = $('#uname option:selected').attr('data-name');
         var add = $('#uname option:selected').attr('data-add');
         var mobile = $('#uname option:selected').attr('data-mobile');
         var email = $('#uname option:selected').attr('data-email');
@@ -107,7 +111,6 @@ function MM_validateForm() { //v4.0
         output += '<p><strong>Address: </strong>' + add + '</p>';
         output += '<p><strong>Mobile: </strong>' + mobile + '</p>';
         output += '<p><strong>Email: </strong>' + email + '</p>';
-
 
         $('#user-details').html(output);
       });
@@ -122,8 +125,8 @@ function MM_validateForm() { //v4.0
       <td colspan="3"><label>
           <input name="NoOfDays" type="hidden" value="4" id="NoOfDays" size="5" />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-<input name="KiloMeters" type="hidden" value="100" id="KiloMeters" size="5" /> 
-
+<input name="KiloMeters" type="hidden" value="<%=one.get(7)%>" id="KiloMeters" size="5" /> 
+<input type="hidden" name="d_name" value="<%=(String)one.get(12)%>" />
 </label></td>
     </tr>
     <tr>
